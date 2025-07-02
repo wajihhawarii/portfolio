@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Hero from '@/components/Hero';
+import Main from '@/components/Main';
 
 
 const page = () => {
@@ -8,6 +9,7 @@ const page = () => {
     <div className=''>
       <Hero />
       <div className='divider' />
+      <Main />
     </div>
   )
 }

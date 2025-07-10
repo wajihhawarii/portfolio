@@ -13,6 +13,7 @@ const page = () => {
       <Main />
       <div className='divider' />
       <ContactUs />
+      <div className='divider' />
     </div>
   )
 }

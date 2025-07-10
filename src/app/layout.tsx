@@ -36,7 +36,7 @@ export default function RootLayout({
           w-[98%] sm:w-[90%] lg:w-[80%] mx-auto
           `}
       >
-        <div className="bg-mainColor px-[1.7rem] lg:px-[4.8rem]">
+        <div className="bg-mainColor px-[1.7rem] lg:px-[4.8rem]"  id='up'>
           <Header />
           {children}
           <Footer />

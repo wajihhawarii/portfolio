@@ -2,6 +2,7 @@ import React from 'react'
 
 import Hero from '@/components/Hero';
 import Main from '@/components/Main';
+import ContactUs from '@/components/ContactUs';
 
 
 const page = () => {
@@ -10,6 +11,8 @@ const page = () => {
       <Hero />
       <div className='divider' />
       <Main />
+      <div className='divider' />
+      <ContactUs />
     </div>
   )
 }

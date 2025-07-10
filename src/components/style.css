@@ -1,0 +1,4 @@
+input:focus, textarea:focus {
+  outline: none;
+  border: 1px solid rgb(45,212,191) !important;
+}

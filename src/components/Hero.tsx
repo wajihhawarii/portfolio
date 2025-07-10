@@ -1,10 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image'
 import React from 'react'
 import { MdVerified } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
 import { FaTwitter } from "react-icons/fa6";
 import { ImLinkedin } from "react-icons/im";
 

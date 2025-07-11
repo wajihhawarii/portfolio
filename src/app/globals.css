@@ -25,6 +25,11 @@ body{
   margin-left: -4.8rem;
 }
 
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 @media (max-width: 1024px) {
   .divider {
     width: calc(100% + 3.4rem);

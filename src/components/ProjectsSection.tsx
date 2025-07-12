@@ -6,6 +6,7 @@ import React from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FaLink } from "react-icons/fa";
 import { IoArrowForwardOutline } from "react-icons/io5";
+import { AnimatePresence, motion } from "framer-motion";
 
 type MyProjectsProps = {
   title: string;
@@ -66,8 +67,14 @@ const ProjectsSection = ({ activeFilter }: ProjectsSectionProps) => {
 
   return (
     <section className='flex flex-wrap gap-x-4 gap-y-[2rem] justify-center flex-1'>
-      {filteredProjects.map((item, index) => (
-        <article key={index} className='border-[1px] border-[rgba(93,188,252,0.3)] rounded-[5px]
+      <AnimatePresence>
+        {filteredProjects.map((item, index) => (
+        <motion.article
+          layout
+          initial={{transform:"scale(0.4)"}}
+          animate={{transform:"scale(1)"}}
+          transition={{type:"spring" , damping:5, stiffness:50}}
+          key={index} className='border-[1px] border-[rgba(93,188,252,0.3)] rounded-[5px]
           transition-all duration-[0.3s] hover:rotate-[1deg] overflow-hidden cursor-pointer hover:scale-[1.01]
           hover:border-blueColor bg-[linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05))]'>
           <Image src={item.image} alt='' width={266} height={100} className='h-auto' />
@@ -84,8 +91,11 @@ const ProjectsSection = ({ activeFilter }: ProjectsSectionProps) => {
               </Link>
             </div>
           </div>
-        </article>
+        </motion.article>
       ))}
+
+      </AnimatePresence>
+      
     </section>
   );
 };

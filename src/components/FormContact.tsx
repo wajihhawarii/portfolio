@@ -5,6 +5,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { MdEmail } from "react-icons/md";
 import Lottie from "lottie-react"
 import doneAnimation from "../../public/animation/done.json";
+import contactAnimation from "../../public/animation/contactAnimation.json";
 
 const FormContact = () => {
 
@@ -58,14 +59,16 @@ const FormContact = () => {
           </button>
           {
             state.succeeded && (
-              <p className='text-[18px] mt-[1.7rem] flex'>
-                <Lottie loop={false} animtionData={doneAnimation} className='h-[44px]' />
+              <p className='text-[18px] mt-[1.7rem] flex items-center'>
+                <Lottie loop={false} animationData={doneAnimation} className='h-[37px]' />
                 Your message has been sent successfully 👌</p>
             )
 
           }
         </form>
-        <div className='hidden sm:block'>animation</div>
+        <div className='hidden sm:block'>
+          <Lottie loop={true} animationData={contactAnimation} style={{height: 355}} className='hidden xl:block' />
+        </div>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ import FormContact from './FormContact'
 
 const ContactUs = () => {
   return (
-    <section>
+    <section id="contact">
       <FormContact />
     </section>
   )

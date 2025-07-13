@@ -21,7 +21,7 @@ const Main = () => {
   const [activeFilter, setActiveFilter] = useState("All Projects");
 
   return (
-    <main className='flex gap-[2.64rem] flex-col sm:flex-row items-center sm:items-start'>
+    <main id="projects" className='flex gap-[2.64rem] flex-col sm:flex-row items-center sm:items-start'>
 
       <section className='flex flex-row flex-wrap justify-center sm:flex-col gap-[10px]'>
         {

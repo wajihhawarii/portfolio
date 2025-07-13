@@ -4,10 +4,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { IoMdClose } from "react-icons/io";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
 import { AiOutlineMoon } from "react-icons/ai";
 import { LuSun } from "react-icons/lu";
 import { IoMenu } from "react-icons/io5";
@@ -20,10 +16,8 @@ const Header = () => {
 
   const links = [
     {name:"About",path: "/"},
-    {name:"Articles",path: "/articles"},
-    {name:"Projects",path: "/projects"},
-    {name:"Speaking",path: "/speaking"},
-    {name:"Contact",path: "/contact"},
+    {name:"Projects",path: "#projects"},
+    {name:"Contact",path: "#contact"},
   ]
 
   return (

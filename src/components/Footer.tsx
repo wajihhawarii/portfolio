@@ -5,10 +5,8 @@ const Footer = () => {
 
   const links = [
     {name:"About",path: "/"},
-    {name:"Articles",path: "/articles"},
-    {name:"Projects",path: "/projects"},
-    {name:"Speaking",path: "/speaking"},
-    {name:"Contact",path: "/contact"},
+    {name:"Projects",path: "#projects"},
+    {name:"Contact",path: "#contact"},
   ]
 
   return (

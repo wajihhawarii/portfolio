@@ -75,7 +75,7 @@ const ProjectsSection = ({ activeFilter }: ProjectsSectionProps) => {
           animate={{transform:"scale(1)"}}
           transition={{type:"spring" , damping:5, stiffness:50}}
           key={index} className='border-[1px] border-[rgba(93,188,252,0.3)] rounded-[5px]
-          transition-all duration-[0.3s] hover:rotate-[1deg] overflow-hidden cursor-pointer hover:scale-[1.01]
+          transition-all duration-[0.3s] hover:!rotate-[1deg] overflow-hidden cursor-pointer hover:!scale-[1.01]
           hover:border-blueColor bg-[linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05))]'>
           <Image src={item.image} alt='' width={266} height={100} className='h-auto' />
           <div className='w-[266px] py-[1rem] px-[0.4rem]'>

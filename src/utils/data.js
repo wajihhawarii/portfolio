@@ -1,26 +1,28 @@
 export const projects = [
   {
+    id:1,
     title: "Weather App",
-    description: "تطبيق طقس بسيط بتيح للمستخدمين معرفة حالة الطقس الحالية في أي مدينة باستخدام واجهة برمجة تطبيقات خارجية.",
-    category: "Mobile",
-    mainImage: "/images/projects/weather-app/main.jpg",
+    description: "A simple weather app that allows users to see the current weather conditions in any city using an external API.",
+    category: "Company Projects",
+    mainImage: "/images/card.jpg",
     arrayImage: [
-      "/images/projects/weather-app/screen1.jpg",
-      "/images/projects/weather-app/screen2.jpg",
-      "/images/projects/weather-app/screen3.jpg",
+      "/images/card.jpg",
+      "/images/card.jpg",
+      "/images/card.jpg",
     ],
     github: "https://github.com/username/weather-app",
     downloadLink: "https://example.com/downloads/weather-app.apk"
   },
 
   {
+    id:2,
     title: "Task Manager",
-    description: "تطبيق إدارة مهام يساعدك بتنظيم شغلك وحياتك اليومية، مع دعم للإشعارات والقوائم.",
-    category: "Web",
-    mainImage: "/images/projects/task-manager/main.jpg",
+    description: "A task management app that helps you organize your work and daily life, with support for notifications and lists.",
+    category: "Freelancer Projects",
+    mainImage: "/images/card.jpg",
     arrayImage: [
-      "/images/projects/task-manager/screen1.jpg",
-      "/images/projects/task-manager/screen2.jpg",
+      "/images/card.jpg",
+      "/images/card.jpg",
     ],
     github: "https://github.com/username/task-manager",
     downloadLink: "https://example.com/downloads/task-manager.apk"

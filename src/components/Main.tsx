@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import ProjectsSection from './ProjectsSection'
+import React, { useState, useMemo } from "react";
+import ProjectsSection from "./ProjectsSection";
+import { projects } from "@/utils/data"; // تأكد تستورد المشاريع من الملف الصح
 
 const Main = () => {
   const styleBtn: string = `
@@ -9,42 +10,39 @@ const Main = () => {
     rounded-[5px] font-bold transition-all delay-[0.3s] hover:opacity-100
   `;
 
-  const btnArray = [
-    "All Projects",
-    "Dart",
-    "Flutter",
-    "Dart + Flutter",
-    "Node & Express",
-    "React"
-  ];
+  // نطلع الـ categories فريدة مع زر "All Projects"
+  const btnArray = useMemo(() => {
+    const categories = Array.from(new Set(projects.map((p) => p.category)));
+    return ["All Projects", ...categories];
+  }, []);
 
   const [activeFilter, setActiveFilter] = useState("All Projects");
 
   return (
-    <main id="projects" className='flex gap-[2.64rem] flex-col sm:flex-row items-center sm:items-start'>
-
-      <section className='flex flex-row flex-wrap justify-center sm:flex-col gap-[10px]'>
-        {
-          btnArray.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveFilter(item)}
-              className={`${styleBtn} ${
-                activeFilter === item
-                  ? "py-[0.8rem] opacity-100 tracking-[0.6px] border-blueColor border-[1px]"
-                  : "opacity-50 py-[0.8rem] sm:py-[0.75rem]"
-              }`}
-            >
-              {item}
-            </button>
-          ))
-        }
+    <main
+      id="projects"
+      className="flex gap-[2.64rem] flex-col sm:flex-row items-center sm:items-start"
+    >
+      <section className="flex flex-row flex-wrap justify-center sm:flex-col gap-[10px]">
+        {btnArray.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveFilter(item)}
+            className={`${styleBtn} ${
+              activeFilter === item
+                ? "py-[0.8rem] opacity-100 tracking-[0.6px] border-blueColor border-[1px]"
+                : "opacity-50 py-[0.8rem] sm:py-[0.75rem]"
+            }`}
+          >
+            {item}
+          </button>
+        ))}
       </section>
 
       {/* Right Section */}
       <ProjectsSection activeFilter={activeFilter} />
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

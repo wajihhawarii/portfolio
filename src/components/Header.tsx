@@ -16,8 +16,8 @@ const Header = () => {
 
   const links = [
     {name:"About",path: "/"},
-    {name:"Projects",path: "#projects"},
-    {name:"Contact",path: "#contact"},
+    {name:"Projects",path: "/#projects"},
+    {name:"Contact",path: "/#contact"},
   ]
 
   return (
@@ -53,7 +53,7 @@ const Header = () => {
 
       {
         showModel && (
-          <div className='fixed inset-0 bg-[rgba(40,40,48,0.91)] myMove backdrop-blur-[4px]'>
+          <div className='fixed inset-0 bg-[rgba(40,40,48,0.91)] myMove backdrop-blur-[4px] z-[100]'>
             <div className='w-[90%] sm:w-[75%] mx-auto mt-[2rem] rounded-[1rem] py-[1rem] px-[1.5rem] sm:px-[2rem]
               bg-mainColor
             '>
@@ -69,6 +69,7 @@ const Header = () => {
                   <div key={index} className={`${links.length - 1 === index ? null : "border-b-[1px] border-borderColor"}
                     pt-[0.5rem] pb-[0.77rem]`}>
                     <Link href={item.path}
+                      onClick={() => setShowModel(false)}
                       className='text-textColor text-[0.88rem] font-medium opacity-[0.9] 
                       hover:text-[0.9rem] hover:opacity-[1] hover:text-blueColor transition-all delay-[0.2s]'
                     >

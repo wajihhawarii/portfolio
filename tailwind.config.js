@@ -17,16 +17,14 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-      colors: {
-        mainColor: 'var(--main-color)',
-        textColor: 'var(--text-color)',
-        subtextColor: 'var(--subtext-color)',
-        borderColor: 'var(--border-color)',
-        bgHeader: 'var(--bg-header)',
-        blueColor: 'var(--blue)',
-        iconHover: 'var(--icon-hover)',
-
-
+  		colors: {
+  			mainColor: 'var(--main-color)',
+  			textColor: 'var(--text-color)',
+  			subtextColor: 'var(--subtext-color)',
+  			borderColor: 'var(--border-color)',
+  			bgHeader: 'var(--bg-header)',
+  			blueColor: 'var(--blue)',
+  			iconHover: 'var(--icon-hover)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

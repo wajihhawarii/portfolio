@@ -37,7 +37,7 @@ const Hero = () => {
           initial={{opacity:0}}
           animate={{opacity:1}}
           transition={{duration:2}} 
-          className='text-[2.85rem] leading-[3.3rem] my-6 text-textColor font-bold'
+          className='text-[1.80rem] leading-[3.3rem] my-6 text-textColor font-bold'
         >
           Software Engineer & Mobile App Developer specialized in Flutter,
           with 2 years of hands-on experience in building high-performance applications

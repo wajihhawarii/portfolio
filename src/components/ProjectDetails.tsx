@@ -18,7 +18,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { projects } from "@/utils/data";
 
-
 const ProjectDetails = () => {
   const params = useParams();
   const router = useRouter();
@@ -71,14 +70,14 @@ const ProjectDetails = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <Card className="bg-zinc-800 overflow-hidden border-[1px] !border-mainColor">
+            <Card className=" overflow-hidden border-[1px] !border-mainColor">
               <CardContent className="p-0 border-0">
                 <div className="relative aspect-video">
                   <Image
-                    src={project.mainImage || "/placeholder.svg"}
+                    src={project.mainImage}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
               </CardContent>
@@ -136,25 +135,47 @@ const ProjectDetails = () => {
 
           <div className="space-y-6">
             <Card className="!bg-[rgba(255,255,255,0.05)] border-blueColor">
-              <CardContent className="p-6">
-                <h2 className="text-xl font-semibold mb-4 text-textColor">Project Description</h2>
-                <p className="text-subtextColor leading-relaxed">{project.description}</p>
+              <CardContent className="p-6 space-y-6">
+                <div>
+                  <h2 className="text-xl font-semibold mb-2 text-textColor">Project Description</h2>
+                  <p className="text-subtextColor leading-relaxed">{project.description}</p>
+                </div>
+
+                {project.features && (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1 text-textColor">Features</h3>
+                    <p className="text-subtextColor">{project.features}</p>
+                  </div>
+                )}
+
+                {project.status && (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-1 text-textColor">Status</h3>
+                    <p className="text-green-600">{project.status}</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                asChild
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
-                  View Source Code
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-
-              <Button
+            <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+              {
+                project.github !== "" ?
+                <Button
+                  asChild
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    View Source Code
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                : null
+              }
+              
+              {
+                project.downloadLink !== "" ?
+                  <Button
                 variant="outline"
                 asChild
                 className="flex-1 bg-white text-zinc-700 "
@@ -169,6 +190,9 @@ const ProjectDetails = () => {
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+              : null
+              }
+              
             </div>
           </div>
         </div>

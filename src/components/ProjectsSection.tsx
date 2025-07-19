@@ -45,12 +45,21 @@ const ProjectsSection = ({ activeFilter }: ProjectsSectionProps) => {
               <p className='text-subtextColor text-[0.8rem] mt-[0.7rem] mb-[1.1rem]'>{item.description}</p>
               <div className='flex justify-between items-center'>
                 <div className='flex items-center justify-start gap-[11px] text-[1.2rem] text-subtextColor'>
-                  <a href={item.downloadLink} target="_blank" rel="noopener noreferrer">
-                    <FaLink className='hover:text-[1.25rem] hover:text-iconHover cursor-pointer' />
-                  </a>
-                  <a href={item.github} target="_blank" rel="noopener noreferrer">
-                    <FaGithub className='hover:text-[1.25rem] hover:text-iconHover cursor-pointer' />
-                  </a>
+                  {
+                    item.downloadLink !== "" ?
+                    <Link href={item.downloadLink} target="_blank" rel="noopener noreferrer">
+                      <FaLink className='hover:text-[1.25rem] hover:text-iconHover cursor-pointer' />
+                    </Link>:
+                    null
+                  }
+
+                  {
+                    item.github !== "" ?
+                    <Link href={item.github} target="_blank" rel="noopener noreferrer">
+                      <FaGithub className='hover:text-[1.25rem] hover:text-iconHover cursor-pointer' />
+                    </Link>:
+                    null
+                  }
                 </div>
                 <Link href={`/projects/${item.id}`} className='flex justify-center text-blueColor text-[0.9rem]'>
                   more <IoArrowForwardOutline className='self-end' />

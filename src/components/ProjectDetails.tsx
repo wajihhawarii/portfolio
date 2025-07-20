@@ -70,7 +70,7 @@ const ProjectDetails = () => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <Card className=" overflow-hidden border-[1px] !border-mainColor">
+            <Card className=" overflow-hidden border-[1px] !border-mainColor !bg-[rgba(255,255,255,0.05)]">
               <CardContent className="p-0 border-0">
                 <div className="relative aspect-video">
                   <Image
@@ -154,6 +154,14 @@ const ProjectDetails = () => {
                     <p className="text-green-600">{project.status}</p>
                   </div>
                 )}
+                {
+                  project.note !== "" ? 
+                  <div>
+                    <div className="text-lg font-semibold mb-1 text-red-600">Note:</div>
+                    <div className="text-subtextColor">{project.note}</div>
+                  </div>
+                  : null
+                }
               </CardContent>
             </Card>
 
@@ -186,13 +194,33 @@ const ProjectDetails = () => {
                   rel="noopener noreferrer"
                 >
                   <Download className="mr-2 h-4 w-4" />
-                  Download App
+                  Download App APK
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               : null
               }
-              
+
+              {
+                project.downloadLinkIOS !== "" ?
+                  <Button
+                variant="outline"
+                asChild
+                className="flex-1 bg-white text-zinc-700 "
+              >
+                <Link
+                  href={project.downloadLinkIOS}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                    Download App IOS
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              : null
+              }
+
             </div>
           </div>
         </div>

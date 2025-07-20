@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaGithub } from "react-icons/fa";
-import { FaLink } from "react-icons/fa";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects } from "../utils/data";

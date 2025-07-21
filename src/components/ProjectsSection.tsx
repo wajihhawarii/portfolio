@@ -42,7 +42,9 @@ const ProjectsSection = ({ activeFilter }: ProjectsSectionProps) => {
             transition-all duration-[0.3s] hover:!rotate-[1deg] overflow-hidden hover:!scale-[1.01]
             hover:border-blueColor bg-[linear-gradient(rgba(255,255,255,0.05),rgba(255,255,255,0.05))]'
           >
+            <Link href={`/projects/${item.id}`} target="_blank" rel="noopener noreferrer">
             <Image src={item.mainImage} alt={item.title} width={266} height={150} className='h-[150px]' />
+            </Link>
             <div className='w-[266px] py-[1rem] px-[0.4rem]'>
               <h1 className='text-textColor capitalize font-medium'>{item.title}</h1>
               <p className='text-subtextColor text-[0.8rem] mt-[0.7rem] mb-[1.1rem]'>{item.description}</p>

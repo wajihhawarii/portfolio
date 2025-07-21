@@ -51,19 +51,21 @@ const ProjectsSection = ({ activeFilter }: ProjectsSectionProps) => {
               <div className='flex justify-between items-center'>
                 <div className='flex items-center justify-start gap-[11px] text-[1.2rem] text-subtextColor'>
                   
-                  <div className='flex items-start gap-2'>
+                  <div className='flex items-start flex-col gap-2'>
                     {
                       item.downloadLink !== "" ?
-                      <Link href={item.downloadLink} target="_blank" rel="noopener noreferrer">
+                      <Link href={item.downloadLink} target="_blank" rel="noopener noreferrer" className='flex items-center justify-start gap-1'>
                         <BsGooglePlay className='hover:text-[1.25rem] hover:text-iconHover cursor-pointer' />
+                        <div className='text-[12px] text-subtextColor'>Download APK Here...</div>
                       </Link>:
                       null
                     }
 
                     {
                       item.downloadLinkIOS !== "" ?
-                      <Link href={item.downloadLinkIOS} target="_blank" rel="noopener noreferrer">
+                      <Link href={item.downloadLinkIOS} target="_blank" rel="noopener noreferrer" className='flex items-center justify-start gap-1'>
                         <FaApple className='hover:text-[1.25rem] hover:text-iconHover cursor-pointer' />
+                        <div className='text-[12px] text-subtextColor'>Download IPA Here...</div>
                       </Link>:
                       null
                     }

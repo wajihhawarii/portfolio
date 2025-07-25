@@ -38,7 +38,7 @@ const Page = () => {
       } else {
         setError('كلمة السر غير صحيحة');
       }
-    } catch (err) {
+    } catch {
       setError('حدث خطأ أثناء التحقق');
     }
   };

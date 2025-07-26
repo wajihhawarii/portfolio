@@ -7,6 +7,9 @@ import ContactUs from '@/components/ContactUs';
 import ScrollButton from '@/components/ScrollButton';
 import TechnicalSkills from '@/components/TechnicalSkills';
 import SoftSkills from '@/components/SoftSkills';
+import EducationSection from '@/components/Education';
+import LocationSection from '@/components/location';
+
 
 const Page = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -28,7 +31,7 @@ const Page = () => {
 
       if (!res.ok) {
         const data = await res.json();
-        setError(data.message || 'فشل في التحقق من كلمة السر');
+        setError(data.message || 'Password verification failed');
         return;
       }
 
@@ -36,10 +39,10 @@ const Page = () => {
       if (data.success) {
         setIsAuthenticated(true);
       } else {
-        setError('كلمة السر غير صحيحة');
+        setError('Incorrect password');
       }
     } catch {
-      setError('حدث خطأ أثناء التحقق');
+      setError('An error occurred during verification');
     }
   };
 
@@ -52,13 +55,13 @@ const Page = () => {
           onSubmit={handleLogin}
           className="relative z-20 bg-white/10 border border-white/20 backdrop-blur-md p-8 rounded-2xl shadow-xl w-full max-w-sm"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center text-white">أدخل كلمة السر</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center text-white">Enter Your Password</h2>
 
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="كلمة السر"
+            placeholder="Password"
             className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400 mb-4"
           />
 
@@ -68,7 +71,7 @@ const Page = () => {
             type="submit"
             className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition"
           >
-            دخول
+            Login
           </button>
         </form>
       </div>
@@ -84,6 +87,10 @@ const Page = () => {
       <Main />
       <div className="divider" />
       <SoftSkills />
+      <div className="divider" />
+      <EducationSection />
+      <div className="divider" />
+      <LocationSection />
       <div className="divider" />
       <ContactUs />
       <div className="divider" />

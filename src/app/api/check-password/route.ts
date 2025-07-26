@@ -9,6 +9,6 @@ export async function POST(request: Request) {
     if (password === correctPassword) {
         return NextResponse.json({ success: true });
     } else {
-        return NextResponse.json({ success: false, message: 'كلمة السر غير صحيحة' }, { status: 401 });
+        return NextResponse.json({ success: false, message: 'Incorrect password' }, { status: 401 });
     }
 }
